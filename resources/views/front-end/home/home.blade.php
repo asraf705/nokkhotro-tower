@@ -227,14 +227,14 @@
 
                 {{-- @foreach( $categories->take(5) as $category ) --}}
 
-                @foreach ($portfolios->take(5) as $portfolio )
+                @foreach ($categories->take(5) as $category )
 
-                    @if($portfolio->category_id === $portfolio->category_id ?? null )
-                        <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolio->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolio->categories->category_name }}</button></a>
+                    @if($portfolios->category_id === $portfolios->category_id ?? null )
+                        <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolios->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolios->categories->category_name }}</button></a>
 
-                    @elseif($portfolio->category_id !== $portfolio->category_id )
+                    @elseif($portfolios->category_id !== $portfolios->category_id )
 
-                    <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolio->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolio->categories->category_name }}</button></a>
+                    <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolios->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolios->categories->category_name }}</button></a>
 
                     @endif
 

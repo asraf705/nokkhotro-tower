@@ -12,7 +12,6 @@
                     <p class="card-description"> Enter your portfolio </p>
                     <form class="forms-sample" action="{{ route('portfolios.store') }}" method="post"
                         enctype="multipart/form-data">
-
                         @csrf
 
                         <div class="form-group">

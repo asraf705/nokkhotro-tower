@@ -225,24 +225,27 @@
             <div class="col-lg-12 d-flex justify-content-center">
                 <div id='myBtnContainer'>
 
-                {{-- @foreach( $categories->take(5) as $category ) --}}
+                @foreach( $categories->take(5) as $category )
 
-                @foreach ($categories->take(5) as $category )
-
-                    @if($portfolios->category_id === $portfolios->category_id ?? null )
-                        <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolios->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolios->categories->category_name }}</button></a>
-
-                    @elseif($portfolios->category_id !== $portfolios->category_id )
-
-                    <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolios->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolios->categories->category_name }}</button></a>
-
+                {{-- @foreach ($portfolios->take(5) as $portfolio )
+                    @if($portfolio->category_id === $portfolio->category_id ?? null )
+                        <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolio->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolio->categories->category_name }}</button></a>
+                    @elseif($portfolio->category_id !== $portfolio->category_id )
+                    <a  href="{{ route('category.wise.portfolio',['categoryId'=>$portfolio->category_id]) }}"><button type="button" class="btn btn-outline-success">{{ $portfolio->categories->category_name }}</button></a>
                     @endif
+                @endforeach --}}
 
+                 {{-- <a href="{{ route('category.wise.portfolio',['categoryId'=>$portfolios->category_id]) }}" class="text-dark">{{ $category->category_name }}</a> --}}
+
+                {{-- @if ($category->id == $portfolios->category_id)
+
+                     <a href="{{route('category.wise.portfolio',['categoryId'=>$portfolios->category_id]')}}"> <button type="button" class="btn btn-outline-success">{{ $category->category_name }}</button> </a>
+
+                @endif --}}
+
+                  <a href="#" class="text-dark"> <button type="button" class="btn btn-outline-success">{{ $category->category_name }}</button></a>
 
                 @endforeach
-
-                {{-- <li ><a href="{{ route('category.wise.portfolio',['categoryId'=>$portfolio->category_id]) }}" class="text-dark">{{ $category->category_name }}</a></li> --}}
-                {{-- @endforeach  --}}
 
                     <a  href="{{ route('portfolio') }}"><button type="button" class="btn btn-outline-success">More</button></a>
 
